@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    width: 100%;
+    margin: auto;
+}
+
+.header {
+    background-color: rgb(255, 81, 0);
+    text-align: center;
+    margin: 0;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 20px;
+    color: whitesmoke;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.header-container {
+    background-color: rgb(95, 84, 94);
+    border-radius: 0 10px 0 0;
+    margin: auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.active-header {
+    background-color: rgb(206, 36, 206);
+}
+
+.finished-header {
+    background-color: rgb(75, 69, 75);
+}
+
+.header-container h3 {
+    margin: 15px 0 0 0;
+    padding: 15px 5px;
+    color: whitesmoke;
+}
+
+.project-container {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 0 0 0 10px;
+    margin: 0 auto 20px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        width: 90%;
+    }
+
+    .project-container {
+        width: 90%;
+    }
+}
+
+@keyframes active-project-animate {
+    from {
+        transform: scale(0);
+		opacity: 0;
+    }
+    to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+@keyframes finished-project-animate {
+    from {
+        transform: scale(1);
+		opacity: 1;
+    }
+    to {
+		transform: scale(0);
+		opacity: 0;	
+	}
+}
+
+.project {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid rgb(184, 181, 181);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 2px 2px 3px gray;
+}
+
+.additional-animate {
+    animation: active-project-animate .3s linear;
+}
+
+.project h3 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.project p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.project button {
+    border-radius: 4px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.project .info-btn {
+    color: rgb(240, 45, 45);
+    border: 1px solid rgb(233, 153, 153);
+    position: relative;
+}
+
+.project .info-btn .tooltip-text {
+    position: absolute;
+    min-width: 70px;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    color: whitesmoke;
+    background-color: rgb(77, 75, 75);
+    text-align: center;
+    border-radius: 3px;
+    padding: 6px;
+    line-height: 1.25;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.project .info-btn:hover {
+    border-color: rgb(235, 43, 43);
+}
+
+.project .info-btn:hover .tooltip-text {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+.project .handler-btn {
+    color: whitesmoke;
+    border: 1px solid rgb(236, 68, 68);
+    background-color: rgb(236, 68, 68);
+}
+
+.project .handler-btn:hover {
+    background-color: rgb(243, 18, 18);
+}
+
+
+/* width */
+.project-container::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+  .project-container::-webkit-scrollbar-track {
+    background: white; 
+}
+ 
+/* Handle */
+.project-container::-webkit-scrollbar-thumb {
+  background: rgb(189, 187, 187);
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+}
+
+/* Handle on hover */
+.project-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(141, 140, 140); 
+}
